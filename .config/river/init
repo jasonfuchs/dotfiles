@@ -76,3 +76,6 @@ riverctl border-color-unfocused 0x586e75
 riverctl set-repeat 70 220
 
 riverctl default-layout rivertile
+
+riverctl hide-cursor timeout 3000
+riverctl hide-cursor when-typing enabled
