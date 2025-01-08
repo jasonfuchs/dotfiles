@@ -50,12 +50,6 @@ all_tags=$(((1 << 32) - 1))
 nmap Super 0 set-focused-tags $all_tags
 nmap Super+Shift 0 set-view-tags $all_tags
 
-# Super+{Up,Right,Down,Left} to change layout orientation
-riverctl map normal Super Up    send-layout-cmd rivertile "main-location top"
-riverctl map normal Super Right send-layout-cmd rivertile "main-location right"
-riverctl map normal Super Down  send-layout-cmd rivertile "main-location bottom"
-riverctl map normal Super Left  send-layout-cmd rivertile "main-location left"
-
 # Various media key mapping examples for both normal and locked mode which do
 # not have a modifier
 for mode in normal locked
