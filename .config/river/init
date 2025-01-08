@@ -1,5 +1,8 @@
 #!/bin/sh
 
+kanshi&
+wlsunset&
+
 term='foot'
 menu='fuzzel'
 
