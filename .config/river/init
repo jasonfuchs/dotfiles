@@ -1,63 +1,54 @@
 #!/bin/sh
 
-riverctl map normal Super T spawn foot
-riverctl map normal Super R spawn fuzzel
-riverctl map normal Super C close
-riverctl map normal Super+Shift C exit
-riverctl map normal Super J focus-view next
-riverctl map normal Super K focus-view previous
-riverctl map normal Super+Shift J swap next
-riverctl map normal Super+Shift K swap previous
-riverctl map normal Super Period focus-output next
-riverctl map normal Super Comma focus-output previous
-riverctl map normal Super+Shift Period send-to-output next
-riverctl map normal Super+Shift Comma send-to-output previous
-riverctl map normal Super Space float
-riverctl map normal Super Return zoom
-riverctl map normal Super+Alt H move left 100
-riverctl map normal Super+Alt J move down 100
-riverctl map normal Super+Alt K move up 100
-riverctl map normal Super+Alt L move right 100
-riverctl map normal Super+Alt+Control H snap left
-riverctl map normal Super+Alt+Control J snap down
-riverctl map normal Super+Alt+Control K snap up
-riverctl map normal Super+Alt+Control L snap right
-riverctl map normal Super+Alt+Shift H resize horizontal -100
-riverctl map normal Super+Alt+Shift J resize vertical 100
-riverctl map normal Super+Alt+Shift K resize vertical -100
-riverctl map normal Super+Alt+Shift L resize horizontal 100
-riverctl map-pointer normal Super BTN_LEFT move-view
-riverctl map-pointer normal Super BTN_RIGHT resize-view
-riverctl map-pointer normal Super BTN_MIDDLE toggle-float
+term='foot'
+menu='fuzzel'
 
-for i in $(seq 1 9)
-do
+alias nmap='riverctl map normal'
+alias ptrnmap='riverctl map-pointer normal'
+
+nmap Super T spawn "$term"
+nmap Super R spawn "$menu"
+nmap Super C close
+nmap Super+Shift C exit
+nmap Super J focus-view next
+nmap Super K focus-view previous
+nmap Super+Shift J swap next
+nmap Super+Shift K swap previous
+nmap Super Period focus-output next
+nmap Super Comma focus-output previous
+nmap Super+Shift Period send-to-output next
+nmap Super+Shift Comma send-to-output previous
+nmap Super Return zoom
+nmap Super Space toggle-float
+nmap Super F toggle-fullscreen
+nmap Super+Alt H move left 100
+nmap Super+Alt J move down 100
+nmap Super+Alt K move up 100
+nmap Super+Alt L move right 100
+nmap Super+Alt+Control H snap left
+nmap Super+Alt+Control J snap down
+nmap Super+Alt+Control K snap up
+nmap Super+Alt+Control L snap right
+nmap Super+Alt+Shift H resize horizontal -100
+nmap Super+Alt+Shift J resize vertical 100
+nmap Super+Alt+Shift K resize vertical -100
+nmap Super+Alt+Shift L resize horizontal 100
+ptrnmap Super BTN_LEFT move-view
+ptrnmap Super BTN_RIGHT resize-view
+ptrnmap Super BTN_MIDDLE toggle-float
+
+for i in `seq 1 9`; do
     tags=$((1 << ($i - 1)))
 
-    # Super+[1-9] to focus tag [0-8]
-    riverctl map normal Super $i set-focused-tags $tags
-
-    # Super+Shift+[1-9] to tag focused view with tag [0-8]
-    riverctl map normal Super+Shift $i set-view-tags $tags
-
-    # Super+Control+[1-9] to toggle focus of tag [0-8]
-    riverctl map normal Super+Control $i toggle-focused-tags $tags
-
-    # Super+Shift+Control+[1-9] to toggle tag [0-8] of focused view
-    riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
+    nmap Super $i set-focused-tags $tags
+    nmap Super+Shift $i set-view-tags $tags
+    nmap Super+Control $i toggle-focused-tags $tags
+    nmap Super+Shift+Control $i toggle-view-tags $tags
 done
 
-# Super+0 to focus all tags
-# Super+Shift+0 to tag focused view with all tags
 all_tags=$(((1 << 32) - 1))
-riverctl map normal Super 0 set-focused-tags $all_tags
-riverctl map normal Super+Shift 0 set-view-tags $all_tags
-
-# Super+Space to toggle float
-riverctl map normal Super Space toggle-float
-
-# Super+F to toggle fullscreen
-riverctl map normal Super F toggle-fullscreen
+nmap Super 0 set-focused-tags $all_tags
+nmap Super+Shift 0 set-view-tags $all_tags
 
 # Super+{Up,Right,Down,Left} to change layout orientation
 riverctl map normal Super Up    send-layout-cmd rivertile "main-location top"
