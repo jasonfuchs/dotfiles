@@ -1,0 +1,9 @@
+profile {
+	output DP-1 adaptive_sync on
+
+	output DP-3 {
+		position -1440,-1120
+		transform 90
+		adaptive_sync on
+	}
+}
