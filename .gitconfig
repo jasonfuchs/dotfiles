@@ -11,6 +11,7 @@
 	p = push
 	m = merge
 	b = branch
+	d = diff
 	re = rebase
 	pu = pull
 	ch = checkout
