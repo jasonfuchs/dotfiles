@@ -5,6 +5,7 @@ export XDG_STATE_HOME=~/.var/lib
 export PAGER=more
 export EDITOR=ed
 export VISUAL=vi
+export PATH=~/bin:$PATH
 
 # Fix GRML Zsh config cache
 export GRML_COMP_CACHE_DIR=$XDG_CACHE_HOME/grml
