@@ -8,3 +8,6 @@ export VISUAL=vi
 
 # Fix GRML Zsh config cache
 export GRML_COMP_CACHE_DIR=$XDG_CACHE_HOME/grml
+
+# Fix Cargo home
+export CARGO_HOME=$XDG_DATA_HOME/cargo
