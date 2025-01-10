@@ -15,3 +15,12 @@ export CARGO_HOME=$XDG_DATA_HOME/cargo
 # Fix Go path and mod cache
 export GOPATH=$XDG_DATA_HOME/go
 export GOMODCACHE=$XDG_CACHE_HOME/go/mod
+
+# in a subshell so the variables remain set in the
+# parent script
+(
+  unset XDG_SEAT
+  unset XDG_SESSION_ID
+  unset XDG_VTNR
+  dbus-update-activation-environment --systemd --all
+)
