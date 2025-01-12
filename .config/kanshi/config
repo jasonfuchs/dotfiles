@@ -1,9 +1,22 @@
-profile {
-	output DP-1 adaptive_sync on
+profile default {
+	output DP-1 {
+		enable
+		adaptive_sync on
+	}
 
 	output DP-3 {
+		enable
 		position -1440,-1120
 		transform 90
 		adaptive_sync on
 	}
+}
+
+profile primary {
+	output DP-1 {
+		enable
+		adaptive_sync on
+	}
+
+	output DP-3 disable
 }
