@@ -83,4 +83,7 @@ riverctl hide-cursor when-typing enabled
 
 riverctl default-attach-mode bottom
 
+riverctl rule-add -app-id 'steam_app_*' tags $((1 << ($i - 1)))
 riverctl rule-add -app-id 'steam_app_*' float
+riverctl rule-add -app-id 'steam_app_*' csd
+riverctl rule-add -app-id 'steam_app_*' tearing
