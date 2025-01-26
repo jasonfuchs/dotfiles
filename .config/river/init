@@ -80,3 +80,5 @@ riverctl default-layout rivertile
 
 riverctl hide-cursor timeout 3000
 riverctl hide-cursor when-typing enabled
+
+riverctl default-attach-mode bottom
