@@ -82,3 +82,5 @@ riverctl hide-cursor timeout 3000
 riverctl hide-cursor when-typing enabled
 
 riverctl default-attach-mode bottom
+
+riverctl rule-add -app-id 'steam_app_*' float
