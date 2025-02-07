@@ -3,7 +3,7 @@
 dex -a&
 kanshi&
 wlsunset -l 52.2 -L 8.5&
-rivertile&
+rivertile -view-padding 33 -outer-padding 33&
 
 term='foot'
 menu='fuzzel'
