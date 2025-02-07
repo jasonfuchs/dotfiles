@@ -27,18 +27,18 @@ nmap Super+Shift Comma send-to-output previous
 nmap Super Return zoom
 nmap Super Space toggle-float
 nmap Super F toggle-fullscreen
-nmap Super+Alt H move left 100
-nmap Super+Alt J move down 100
-nmap Super+Alt K move up 100
-nmap Super+Alt L move right 100
-nmap Super+Alt+Control H snap left
-nmap Super+Alt+Control J snap down
-nmap Super+Alt+Control K snap up
-nmap Super+Alt+Control L snap right
-nmap Super+Alt+Shift H resize horizontal -100
-nmap Super+Alt+Shift J resize vertical 100
-nmap Super+Alt+Shift K resize vertical -100
-nmap Super+Alt+Shift L resize horizontal 100
+nmap Super+Alt Left move left 100
+nmap Super+Alt Down move down 100
+nmap Super+Alt Up move up 100
+nmap Super+Alt Right move right 100
+nmap Super+Alt+Control Left snap left
+nmap Super+Alt+Control Down snap down
+nmap Super+Alt+Control Up snap up
+nmap Super+Alt+Control Right snap right
+nmap Super+Alt+Shift Left resize horizontal -100
+nmap Super+Alt+Shift Down resize vertical 100
+nmap Super+Alt+Shift Up resize vertical -100
+nmap Super+Alt+Shift Right resize horizontal 100
 ptrnmap Super BTN_LEFT move-view
 ptrnmap Super BTN_RIGHT resize-view
 ptrnmap Super BTN_MIDDLE toggle-float
