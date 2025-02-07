@@ -16,6 +16,8 @@ nmap Super T spawn "$term"
 nmap Super R spawn "$menu"
 nmap Super C close
 nmap Super+Shift C exit
+nmap Super S spawn 'slurp -o | grim -g -'
+nmap Super+Shift S spawn 'slurp | grim -g -'
 nmap Super J focus-view next
 nmap Super K focus-view previous
 nmap Super+Shift J swap next
