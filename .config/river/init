@@ -11,6 +11,7 @@ menu='fuzzel'
 alias nmap='riverctl map normal'
 alias ptrnmap='riverctl map-pointer normal'
 alias map='riverctl map'
+alias rulea='riverctl rule-add'
 
 nmap Super T spawn "$term"
 nmap Super R spawn "$menu"
@@ -85,7 +86,10 @@ riverctl hide-cursor when-typing enabled
 
 riverctl default-attach-mode bottom
 
-riverctl rule-add -app-id 'steam_app_*' tags $((1 << (9 - 1)))
-riverctl rule-add -app-id 'steam_app_*' float
-riverctl rule-add -app-id 'steam_app_*' csd
-riverctl rule-add -app-id 'steam_app_*' tearing
+rulea -app-id 'steam_app_*' tags $((1 << (9 - 1)))
+rulea -app-id 'steam_app_*' float
+rulea -app-id 'steam_app_*' csd
+rulea -app-id 'steam_app_*' tearing
+
+rulea -app-id 'org.mozilla.firefox' ssd
+rulea -app-id 'steam' ssd
