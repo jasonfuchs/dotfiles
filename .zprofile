@@ -20,6 +20,9 @@ export CARGO_HOME=$XDG_DATA_HOME/cargo
 export GOPATH=$XDG_DATA_HOME/go
 export GOMODCACHE=$XDG_CACHE_HOME/go/mod
 
+# Nix profile
+export PATH=$XDG_STATE_HOME/nix/profile/bin:$PATH
+
 # in a subshell so the variables remain set in the
 # parent script
 (
