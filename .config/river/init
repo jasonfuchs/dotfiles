@@ -4,6 +4,7 @@ dex -a&
 kanshi&
 wlsunset -l 52.2 -L 8.5&
 rivertile -view-padding 33 -outer-padding 33&
+yambar&
 
 term='foot'
 menu='fuzzel'
@@ -73,9 +74,8 @@ for mode in normal locked; do
     map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
 done
 
-riverctl background-color 0x002b36
-riverctl border-color-focused 0x93a1a1
-riverctl border-color-unfocused 0x586e75
+riverctl background-color 0xc9c5cb
+riverctl border-width 0
 
 riverctl set-repeat 70 220
 
