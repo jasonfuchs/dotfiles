@@ -20,6 +20,7 @@ nmap Super C close
 nmap Super+Shift C exit
 nmap Super S spawn 'slurp -o | grim -g -'
 nmap Super+Shift S spawn 'slurp | grim -g -'
+nmap Super B spawn 'pkill yambar || yambar'
 nmap Super J focus-view next
 nmap Super K focus-view previous
 nmap Super+Shift J swap next
