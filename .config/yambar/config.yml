@@ -7,7 +7,7 @@ bar:
 
   center:
     - clock:
-        time-format: "%H:%M:%S"
+        time-format: "%H:%M"
         date-format: "%d.%m.%Y"
         content:
           string: {text: "{time} {date}"}
