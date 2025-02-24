@@ -87,6 +87,8 @@ riverctl hide-cursor when-typing enabled
 
 riverctl default-attach-mode bottom
 
+riverctl input "pointer-12815-8794-Nordic_Semiconductor_USB__Gaming_Mouse" accel-profile flat
+
 rulea -app-id 'steam_app_*' tags $((1 << (9 - 1)))
 rulea -app-id 'steam_app_*' float
 rulea -app-id 'steam_app_*' csd
