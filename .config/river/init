@@ -6,6 +6,7 @@ wlsunset -l 52.2 -L 8.5&
 rivertile -view-padding 33 -outer-padding 33&
 yambar&
 
+mod='Super'
 term='foot'
 menu='fuzzel'
 
@@ -14,52 +15,52 @@ alias ptrnmap='riverctl map-pointer normal'
 alias map='riverctl map'
 alias rulea='riverctl rule-add'
 
-nmap Super T spawn "$term"
-nmap Super R spawn "$menu"
-nmap Super C close
-nmap Super+Shift C exit
-nmap Super S spawn 'slurp -o | grim -g -'
-nmap Super+Shift S spawn 'slurp | grim -g -'
-nmap Super B spawn 'pkill yambar || yambar'
-nmap Super J focus-view next
-nmap Super K focus-view previous
-nmap Super+Shift J swap next
-nmap Super+Shift K swap previous
-nmap Super Period focus-output next
-nmap Super Comma focus-output previous
-nmap Super+Shift Period send-to-output next
-nmap Super+Shift Comma send-to-output previous
-nmap Super Return zoom
-nmap Super Space toggle-float
-nmap Super F toggle-fullscreen
-nmap Super+Alt Left move left 100
-nmap Super+Alt Down move down 100
-nmap Super+Alt Up move up 100
-nmap Super+Alt Right move right 100
-nmap Super+Alt+Control Left snap left
-nmap Super+Alt+Control Down snap down
-nmap Super+Alt+Control Up snap up
-nmap Super+Alt+Control Right snap right
-nmap Super+Alt+Shift Left resize horizontal -100
-nmap Super+Alt+Shift Down resize vertical 100
-nmap Super+Alt+Shift Up resize vertical -100
-nmap Super+Alt+Shift Right resize horizontal 100
-ptrnmap Super BTN_LEFT move-view
-ptrnmap Super BTN_RIGHT resize-view
-ptrnmap Super BTN_MIDDLE toggle-float
+nmap $mod T spawn "$term"
+nmap $mod R spawn "$menu"
+nmap $mod C close
+nmap $mod+Shift C exit
+nmap $mod S spawn 'slurp -o | grim -g -'
+nmap $mod+Shift S spawn 'slurp | grim -g -'
+nmap $mod B spawn 'pkill yambar || yambar'
+nmap $mod J focus-view next
+nmap $mod K focus-view previous
+nmap $mod+Shift J swap next
+nmap $mod+Shift K swap previous
+nmap $mod Period focus-output next
+nmap $mod Comma focus-output previous
+nmap $mod+Shift Period send-to-output next
+nmap $mod+Shift Comma send-to-output previous
+nmap $mod Return zoom
+nmap $mod Space toggle-float
+nmap $mod F toggle-fullscreen
+nmap $mod+Alt Left move left 100
+nmap $mod+Alt Down move down 100
+nmap $mod+Alt Up move up 100
+nmap $mod+Alt Right move right 100
+nmap $mod+Alt+Control Left snap left
+nmap $mod+Alt+Control Down snap down
+nmap $mod+Alt+Control Up snap up
+nmap $mod+Alt+Control Right snap right
+nmap $mod+Alt+Shift Left resize horizontal -100
+nmap $mod+Alt+Shift Down resize vertical 100
+nmap $mod+Alt+Shift Up resize vertical -100
+nmap $mod+Alt+Shift Right resize horizontal 100
+ptrnmap $mod BTN_LEFT move-view
+ptrnmap $mod BTN_RIGHT resize-view
+ptrnmap $mod BTN_MIDDLE toggle-float
 
 for i in `seq 1 9`; do
     tags=$((1 << ($i - 1)))
 
-    nmap Super $i set-focused-tags $tags
-    nmap Super+Shift $i set-view-tags $tags
-    nmap Super+Control $i toggle-focused-tags $tags
-    nmap Super+Shift+Control $i toggle-view-tags $tags
+    nmap $mod $i set-focused-tags $tags
+    nmap $mod+Shift $i set-view-tags $tags
+    nmap $mod+Control $i toggle-focused-tags $tags
+    nmap $mod+Shift+Control $i toggle-view-tags $tags
 done
 
 all_tags=$(((1 << 32) - 1))
-nmap Super 0 set-focused-tags $all_tags
-nmap Super+Shift 0 set-view-tags $all_tags
+nmap $mod 0 set-focused-tags $all_tags
+nmap $mod+Shift 0 set-view-tags $all_tags
 
 for mode in normal locked; do
     map $mode None XF86Eject spawn 'eject -T'
