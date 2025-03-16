@@ -98,6 +98,6 @@ rulea -app-id 'steam_app_*' tearing
 rulea -app-id 'org.mozilla.firefox' ssd
 rulea -app-id 'steam' ssd
 
-for i in `riverctl list-inputs | grep 'pointer'`; do
-    riverctl input $i accel-profile flat
+for input in `riverctl list-inputs | grep 'pointer'`; do
+    riverctl input $input accel-profile flat
 done
