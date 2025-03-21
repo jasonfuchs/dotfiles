@@ -1,5 +1,9 @@
 #!/bin/sh
 
+dbus-update-activation-environment --systemd \
+	WAYLAND_DISPLAY \
+	XDG_CURRENT_DESKTOP=river
+
 dex -a&
 kanshi&
 wlsunset -l 52.2 -L 8.5&
