@@ -106,5 +106,5 @@ for input in `riverctl list-inputs | grep 'pointer'`; do
     riverctl input $input accel-profile flat
 done
 
-riverctl keyboard-layout us -variant intl
+riverctl keyboard-layout -variant intl us
 setxkbmap us // only works until Proton supports Wayland
