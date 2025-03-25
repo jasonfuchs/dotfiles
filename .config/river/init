@@ -6,7 +6,11 @@ dbus-update-activation-environment --systemd \
 
 dex -a&
 kanshi&
-wlsunset -l 52.2 -L 8.5&
+wlsunset \
+	-l 52.2 \
+	-L 8.5 \
+	-t 3000 \
+	-T 5300 &
 rivertile -view-padding 33 -outer-padding 33&
 yambar&
 
@@ -107,4 +111,3 @@ for input in `riverctl list-inputs | grep 'pointer'`; do
 done
 
 riverctl keyboard-layout -variant intl us
-setxkbmap us // only works until Proton supports Wayland
