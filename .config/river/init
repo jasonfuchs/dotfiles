@@ -13,6 +13,7 @@ wlsunset \
 	-T 5300 &
 rivertile -view-padding 33 -outer-padding 33&
 yambar&
+fnott&
 
 mod='Super'
 term='foot'
