@@ -34,3 +34,5 @@ export PATH=$XDG_STATE_HOME/nix/profile/bin:$PATH
   unset XDG_VTNR
   dbus-update-activation-environment --systemd --all
 )
+
+exec river 2>~/.var/log/river
