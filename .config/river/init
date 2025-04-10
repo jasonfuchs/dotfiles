@@ -12,7 +12,7 @@ wlsunset \
 	-t 3000 \
 	-T 5300 &
 rivertile -view-padding 33 -outer-padding 33&
-yambar&
+// yambar&
 fnott&
 
 mod='Super'
