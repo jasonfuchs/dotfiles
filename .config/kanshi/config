@@ -1,6 +1,7 @@
 profile default {
 	output DP-1 {
 		enable
+		position 1,1
 		adaptive_sync on
 	}
 
