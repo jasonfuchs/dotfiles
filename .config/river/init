@@ -1,75 +1,82 @@
 #!/bin/sh
 
-dbus-update-activation-environment --systemd \
-	WAYLAND_DISPLAY \
-	XDG_CURRENT_DESKTOP=river
+. ~/.local/include/riverctl.lib
 
+background-color 0xc9c5cb
+
+dbus-update-activation-environment --systemd \
+    WAYLAND_DISPLAY \
+    XDG_CURRENT_DESKTOP=river
+
+# autostart
 dex -a&
 kanshi&
 wlsunset \
-	-l 52.2 \
-	-L 8.5 \
-	-t 3000 \
-	-T 5300 &
-rivertile -view-padding 33 -outer-padding 33&
-// yambar&
+    -l 52.2 \
+    -L 8.5 \
+    -t 3000 \
+    -T 5300 &
+rivertile \
+    -view-padding 33 \
+    -outer-padding 33 &
+# yambar&
 fnott&
 
+keyboard-layout \
+    -variant intl, \
+    us,us
+
+# defaults
 mod='Super'
 term='foot'
 menu='fuzzel'
 
-alias nmap='riverctl map normal'
-alias ptrnmap='riverctl map-pointer normal'
-alias map='riverctl map'
-alias rulea='riverctl rule-add'
-
-nmap $mod T spawn "$term"
-nmap $mod R spawn "$menu"
-nmap $mod C close
-nmap $mod+Shift C exit
-nmap $mod S spawn 'slurp -o | grim -g -'
-nmap $mod+Shift S spawn 'slurp | grim -g -'
-nmap $mod B spawn 'pkill yambar || yambar'
-nmap $mod J focus-view next
-nmap $mod K focus-view previous
-nmap $mod+Shift J swap next
-nmap $mod+Shift K swap previous
-nmap $mod Period focus-output next
-nmap $mod Comma focus-output previous
-nmap $mod+Shift Period send-to-output next
-nmap $mod+Shift Comma send-to-output previous
-nmap $mod Return zoom
-nmap $mod Space toggle-float
-nmap $mod F toggle-fullscreen
-nmap $mod+Alt Left move left 100
-nmap $mod+Alt Down move down 100
-nmap $mod+Alt Up move up 100
-nmap $mod+Alt Right move right 100
-nmap $mod+Alt+Control Left snap left
-nmap $mod+Alt+Control Down snap down
-nmap $mod+Alt+Control Up snap up
-nmap $mod+Alt+Control Right snap right
-nmap $mod+Alt+Shift Left resize horizontal -100
-nmap $mod+Alt+Shift Down resize vertical 100
-nmap $mod+Alt+Shift Up resize vertical -100
-nmap $mod+Alt+Shift Right resize horizontal 100
-ptrnmap $mod BTN_LEFT move-view
-ptrnmap $mod BTN_RIGHT resize-view
-ptrnmap $mod BTN_MIDDLE toggle-float
+map normal $mod T spawn "$term"
+map normal $mod R spawn "$menu"
+map normal $mod C close
+map normal $mod+Shift C exit
+map normal $mod S spawn 'slurp -o | grim -g -'
+map normal $mod+Shift S spawn 'slurp | grim -g -'
+map normal $mod B spawn 'pkill yambar || yambar'
+map normal $mod J focus-view next
+map normal $mod K focus-view previous
+map normal $mod+Shift J swap next
+map normal $mod+Shift K swap previous
+map normal $mod Period focus-output next
+map normal $mod Comma focus-output previous
+map normal $mod+Shift Period send-to-output next
+map normal $mod+Shift Comma send-to-output previous
+map normal $mod Return zoom
+map normal $mod Space toggle-float
+map normal $mod F toggle-fullscreen
+map normal $mod+Alt Left move left 100
+map normal $mod+Alt Down move down 100
+map normal $mod+Alt Up move up 100
+map normal $mod+Alt Right move right 100
+map normal $mod+Alt+Control Left snap left
+map normal $mod+Alt+Control Down snap down
+map normal $mod+Alt+Control Up snap up
+map normal $mod+Alt+Control Right snap right
+map normal $mod+Alt+Shift Left resize horizontal -100
+map normal $mod+Alt+Shift Down resize vertical 100
+map normal $mod+Alt+Shift Up resize vertical -100
+map normal $mod+Alt+Shift Right resize horizontal 100
+map-pointer normal $mod BTN_LEFT move-view
+map-pointer normal $mod BTN_RIGHT resize-view
+map-pointer normal $mod BTN_MIDDLE toggle-float
 
 for i in `seq 1 9`; do
     tags=$((1 << ($i - 1)))
 
-    nmap $mod $i set-focused-tags $tags
-    nmap $mod+Shift $i set-view-tags $tags
-    nmap $mod+Control $i toggle-focused-tags $tags
-    nmap $mod+Shift+Control $i toggle-view-tags $tags
+    map normal $mod $i set-focused-tags $tags
+    map normal $mod+Shift $i set-view-tags $tags
+    map normal $mod+Control $i toggle-focused-tags $tags
+    map normal $mod+Shift+Control $i toggle-view-tags $tags
 done
 
 all_tags=$(((1 << 32) - 1))
-nmap $mod 0 set-focused-tags $all_tags
-nmap $mod+Shift 0 set-view-tags $all_tags
+map normal $mod 0 set-focused-tags $all_tags
+map normal $mod+Shift 0 set-view-tags $all_tags
 
 for mode in normal locked; do
     map $mode None XF86Eject spawn 'eject -T'
@@ -85,30 +92,28 @@ for mode in normal locked; do
     map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
 done
 
-riverctl background-color 0xc9c5cb
-riverctl border-width 0
+border-width 0
 
-riverctl set-repeat 70 220
+set-repeat 70 220
 
-riverctl default-layout rivertile
+default-layout rivertile
 
-riverctl hide-cursor timeout 3000
-riverctl hide-cursor when-typing enabled
+hide-cursor timeout 3000
+hide-cursor when-typing enabled
 
-riverctl default-attach-mode bottom
+default-attach-mode bottom
 
-riverctl input "pointer-12815-8794-Nordic_Semiconductor_USB__Gaming_Mouse" accel-profile flat
+input "pointer-12815-8794-Nordic_Semiconductor_USB__Gaming_Mouse" accel-profile flat
 
-rulea -app-id 'steam_app_*' tags $((1 << (9 - 1)))
-rulea -app-id 'steam_app_*' float
-rulea -app-id 'steam_app_*' csd
-rulea -app-id 'steam_app_*' tearing
+rule-add -app-id 'steam_app_*' tags $((1 << (9 - 1)))
+rule-add -app-id 'steam_app_*' float
+rule-add -app-id 'steam_app_*' csd
+rule-add -app-id 'steam_app_*' tearing
 
-rulea -app-id 'org.mozilla.firefox' ssd
-rulea -app-id 'steam' ssd
+rule-add -app-id 'org.mozilla.firefox' ssd
+rule-add -app-id 'steam' ssd
 
-for input in `riverctl list-inputs | grep 'pointer'`; do
-    riverctl input $input accel-profile flat
+for input in `list-inputs | grep 'pointer'`; do
+    input $input accel-profile flat
+#    input $input pointer-accel -0.92
 done
-
-riverctl keyboard-layout -variant intl us
