@@ -5,7 +5,7 @@ export XDG_STATE_HOME=~/.var/lib
 export PAGER=more
 export EDITOR=ed
 export VISUAL=vi
-export PATH=~/bin:$PATH
+export PATH=~/git/bin:$PATH
 export CFLAGS='-O3 -march=native'
 export MAKEFLAGS=-j`nproc`
 export CARGO_BUILD_JOBS=`nproc`
