@@ -2,8 +2,6 @@
 
 . ~/.local/include/riverctl.lib
 
-background-color 0xc9c5cb
-
 dbus-update-activation-environment --systemd \
     WAYLAND_DISPLAY \
     XDG_CURRENT_DESKTOP=river
@@ -21,9 +19,11 @@ rivertile \
     -outer-padding 33 &
 # yambar&
 fnott&
+wbg ~/pic/bg/earthmover-1.png&
 
 keyboard-layout \
     -variant intl, \
+    -options "grp:alt_space_toggle" \
     us,us
 
 # defaults
@@ -66,7 +66,7 @@ map-pointer normal $mod BTN_RIGHT resize-view
 map-pointer normal $mod BTN_MIDDLE toggle-float
 
 for i in `seq 1 9`; do
-    tags=$((1 << ($i - 1)))
+    tags="$((1 << ($i - 1)))"
 
     map normal $mod $i set-focused-tags $tags
     map normal $mod+Shift $i set-view-tags $tags
@@ -74,7 +74,7 @@ for i in `seq 1 9`; do
     map normal $mod+Shift+Control $i toggle-view-tags $tags
 done
 
-all_tags=$(((1 << 32) - 1))
+all_tags="$(((1 << 32) - 1))"
 map normal $mod 0 set-focused-tags $all_tags
 map normal $mod+Shift 0 set-view-tags $all_tags
 
@@ -105,7 +105,7 @@ default-attach-mode bottom
 
 input "pointer-12815-8794-Nordic_Semiconductor_USB__Gaming_Mouse" accel-profile flat
 
-rule-add -app-id 'steam_app_*' tags $((1 << (9 - 1)))
+rule-add -app-id 'steam_app_*' tags "$((1 << (9 - 1)))"
 rule-add -app-id 'steam_app_*' float
 rule-add -app-id 'steam_app_*' csd
 rule-add -app-id 'steam_app_*' tearing
@@ -114,6 +114,6 @@ rule-add -app-id 'org.mozilla.firefox' ssd
 rule-add -app-id 'steam' ssd
 
 for input in `list-inputs | grep 'pointer'`; do
-    input $input accel-profile flat
-#    input $input pointer-accel -0.92
+    input "$input" accel-profile flat
+#    input "$input" pointer-accel -0.92
 done
