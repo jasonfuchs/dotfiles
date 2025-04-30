@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. ~/.local/include/riverctl.lib
+. $XDG_CONFIG_HOME/river/riverctl.lib
 
 dbus-update-activation-environment --systemd \
     WAYLAND_DISPLAY \
