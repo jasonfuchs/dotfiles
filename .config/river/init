@@ -19,7 +19,7 @@ rivertile \
     -outer-padding 33 &
 # yambar&
 fnott&
-wbg ~/pic/bg/earthmover-1.png&
+#wbg ~/pic/bg/earthmover-1.png&
 
 keyboard-layout \
     -variant intl, \
