@@ -2,6 +2,8 @@
 
 . $XDG_CONFIG_HOME/river/riverctl.lib
 
+background-color 0x000000
+
 dbus-update-activation-environment --systemd \
     WAYLAND_DISPLAY \
     XDG_CURRENT_DESKTOP=river
