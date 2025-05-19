@@ -3,6 +3,10 @@
 . $XDG_CONFIG_HOME/river/riverctl.lib
 
 background-color 0x000000
+border-width 3
+border-color-focused 0x565E65
+border-color-unfocused 0x393F45
+border-color-urgent 0xC795AE
 
 dbus-update-activation-environment --systemd \
     WAYLAND_DISPLAY \
@@ -17,11 +21,9 @@ wlsunset \
     -t 3000 \
     -T 5300 &
 rivertile \
-    -view-padding 33 \
-    -outer-padding 33 &
-# yambar&
+    -view-padding 14 \
+    -outer-padding 14 &
 fnott&
-#wbg ~/pic/bg/earthmover-1.png&
 
 keyboard-layout \
     -variant intl, \
@@ -93,8 +95,6 @@ for mode in normal locked; do
     map $mode None XF86MonBrightnessUp spawn 'brightnessctl set +5%'
     map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
 done
-
-border-width 0
 
 set-repeat 70 220
 
