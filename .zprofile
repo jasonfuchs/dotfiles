@@ -10,7 +10,6 @@ export CFLAGS='-O3 -march=native'
 export MAKEFLAGS=-j`nproc`
 export CARGO_BUILD_JOBS=`nproc`
 export PASSWORD_STORE_DIR=~/git/password-store
-export RESEND_API_KEY="$(pass RESEND_API_KEY)"
 
 # Fix GRML Zsh config cache
 export GRML_COMP_CACHE_DIR=$XDG_CACHE_HOME/grml
