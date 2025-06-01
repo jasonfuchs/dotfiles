@@ -3,6 +3,7 @@ theme = "base16-ashes"
 [editor]
 line-number = "relative"
 cursorline = true
+color-modes = true
 
 [editor.cursor-shape]
 insert = "bar"
