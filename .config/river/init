@@ -99,23 +99,22 @@ done
 set-repeat 70 220
 
 default-layout rivertile
+default-attach-mode bottom
 
 hide-cursor timeout 3000
 hide-cursor when-typing enabled
 
-default-attach-mode bottom
+for input in `list-inputs | grep 'pointer'`; do
+    input "$input" accel-profile flat
+done
 
-input "pointer-12815-8794-Nordic_Semiconductor_USB__Gaming_Mouse" accel-profile flat
+rule-add -app-id '*' ssd
+
+rule-add -app-id '*.exe' float
+rule-add -app-id '*.exe' csd
+rule-add -app-id '*.exe' tearing
 
 rule-add -app-id 'steam_app_*' tags "$((1 << (9 - 1)))"
 rule-add -app-id 'steam_app_*' float
 rule-add -app-id 'steam_app_*' csd
 rule-add -app-id 'steam_app_*' tearing
-
-rule-add -app-id 'org.mozilla.firefox' ssd
-rule-add -app-id 'steam' ssd
-
-for input in `list-inputs | grep 'pointer'`; do
-    input "$input" accel-profile flat
-#    input "$input" pointer-accel -0.92
-done
