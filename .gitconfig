@@ -5,3 +5,7 @@
 	autoSetupRemote = true
 [init]
 	defaultBranch = master
+[pull]
+	rebase = true
+[advice]
+	skippedCherryPicks = false
