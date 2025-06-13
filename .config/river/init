@@ -114,9 +114,9 @@ riverctl default-attach-mode bottom
 riverctl hide-cursor timeout 3000
 riverctl hide-cursor when-typing enabled
 
-for input in `riverctl list-inputs | grep 'pointer'`; do
-    riverctl input "$input" accel-profile flat
-done
+#for input in `riverctl list-inputs | grep 'pointer'`; do
+#    riverctl input "$input" accel-profile flat
+#done
 
 riverctl rule-add -app-id '*' ssd
 
