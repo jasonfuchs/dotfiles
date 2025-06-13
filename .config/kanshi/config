@@ -1,13 +1,13 @@
 profile default {
 	output DP-1 {
 		enable
-		position 1,1
+		position 0,0
 		adaptive_sync on
 	}
 
 	output DP-3 {
 		enable
-		position -1440,-1120
+		position 2560,0
 		transform 90
 		adaptive_sync on
 	}
