@@ -114,9 +114,13 @@ riverctl default-attach-mode bottom
 riverctl hide-cursor timeout 3000
 riverctl hide-cursor when-typing enabled
 
-#for input in `riverctl list-inputs | grep 'pointer'`; do
-#    riverctl input "$input" accel-profile flat
-#done
+# DELUX M800 Ultra 4K reciver
+riverctl input pointer-12815-8800-wch.cn_DELUX_4K_Receive accel-profile flat
+riverctl input pointer-12815-8800-wch.cn_DELUX_4K_Receive map-to-output DP-1
+
+# DELUX 8K reciver
+riverctl input pointer-7511-64101-LXDDZ_2.4G_8K_HS_Receiver accel-profile flat
+riverctl input pointer-7511-64101-LXDDZ_2.4G_8K_HS_Receiver map-to-output DP-1
 
 riverctl rule-add -app-id '*' ssd
 
