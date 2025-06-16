@@ -75,6 +75,12 @@ riverctl map normal $mod+Alt+Shift Left resize horizontal -100
 riverctl map normal $mod+Alt+Shift Down resize vertical 100
 riverctl map normal $mod+Alt+Shift Up resize vertical -100
 riverctl map normal $mod+Alt+Shift Right resize horizontal 100
+riverctl map normal $mod+Control Left send-layout-cmd rivertile "main-location left"
+riverctl map normal $mod+Control Down send-layout-cmd rivertile "main-location bottom"
+riverctl map normal $mod+Control Up send-layout-cmd rivertile "main-location top"
+riverctl map normal $mod+Control Right send-layout-cmd rivertile "main-location right"
+riverctl map normal $mod+Shift H send-layout-cmd rivertile "main-count +1"
+riverctl map normal $mod+Shift L send-layout-cmd rivertile "main-count -1"
 riverctl map-pointer normal $mod BTN_LEFT move-view
 riverctl map-pointer normal $mod BTN_RIGHT resize-view
 riverctl map-pointer normal $mod BTN_MIDDLE toggle-float
