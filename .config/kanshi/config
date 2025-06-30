@@ -1,23 +1,33 @@
-profile default {
-	output DP-1 {
-		enable
-		position 0,0
-		adaptive_sync on
-	}
+output "Acer Technologies XV271U M3 1322131231233" {
+	enable
+	adaptive_sync on
+}
 
-	output DP-3 {
-		enable
-		position 3840,0
-		transform 90
-		adaptive_sync on
-	}
+output "Acer Technologies XV272U 0x0511811B" {
+	enable
+	adaptive_sync on
+	transform 90
+}
+
+profile default {
+	output "Acer Technologies XV271U M3 1322131231233"
+	output "Acer Technologies XV272U 0x0511811B"
 }
 
 profile primary {
-	output DP-1 {
-		enable
-		adaptive_sync on
-	}
+	output "Acer Technologies XV271U M3 1322131231233"
+	output "Acer Technologies XV272U 0x0511811B" disable
+}
 
-	output DP-3 disable
+profile secondary {
+	output "Acer Technologies XV271U M3 1322131231233" disable
+	output "Acer Technologies XV272U 0x0511811B"
+}
+
+profile {
+	output "Acer Technologies XV271U M3 1322131231233"
+}
+
+profile {
+	output "Acer Technologies XV272U 0x0511811B"
 }
