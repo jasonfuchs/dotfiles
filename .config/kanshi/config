@@ -1,17 +1,17 @@
 output "Acer Technologies XV271U M3 1322131231233" {
-	enable
 	adaptive_sync on
+	enable
 }
 
 output "Acer Technologies XV272U 0x0511811B" {
-	enable
 	adaptive_sync on
 	transform 90
+	enable
 }
 
 profile default {
 	output "Acer Technologies XV271U M3 1322131231233"
-	output "Acer Technologies XV272U 0x0511811B"
+	output "Acer Technologies XV272U 0x0511811B" position -1440,-1120
 }
 
 profile primary {
